@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mario's Nightmare</title>
+  </head>
+  <body>
+    <form action="" method="post" novalidate>
+      <p>
+        {{ form.command.label }}<br>
+        {{ form.command(size=32) }}<br>
+        {% for error in form.command.errors %}
+        <span style="color: red">{{ error }}</span>
+        {% endfor %}
+      </p>
+      <input type="submit" value="Submit">
+    </form>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div>
+      {% for message in messages %}
+      <p> {{ message }} </p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+  </body>
+</html>

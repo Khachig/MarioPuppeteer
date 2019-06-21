@@ -2,12 +2,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Mario's Nightmare</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
   </head>
   <body>
     <form action="" method="post" novalidate>
+      <h1>{{ form.command.label }}</h1>
       <p>
-        {{ form.command.label }}<br>
-        {{ form.command(size=32) }}<br>
+        {{ form.command(size=58) }}<br>
         {% for error in form.command.errors %}
         <span style="color: red">{{ error }}</span>
         {% endfor %}

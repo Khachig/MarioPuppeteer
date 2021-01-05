@@ -3,18 +3,22 @@
 
 To run the program, you must have the NES emulator FCEUX installed on your machine, 
 with a playable ROM of Super Mario Bros, and a python version of 3.6 or later.  
-  
-While the game is running, run the lua script read.lua through the emulator. 
+
+You can download the Windows version of the emulator [from here](https://fceux.com/web/home.html), or using your Linux package manager. While this project does work on the Linux version of the emulator, only the Windows version provides the RAM debugger.
+
+While the game is running, run the Lua script `read.lua` through the emulator. 
 Then, navigate to the `app` directory on the command line and run the python program itself with the command: 
 
     flask run
-    
 
-Open any browser and type the ip-address of the computer that the program is running on and 
-the port number provided by the program.  
-  
+Make sure you have your `FLASK_APP` environment variable set correctly.  
+You can do that by using the command:  
+
+    export FLASK_APP=routes.py
+
+
+Open any browser on the same network and type `localhost:` followed by the port number provided by the program.  
+
 For example:
 
-    123.456.7.8:8000
-    
-- - -
+    localhost:5000
